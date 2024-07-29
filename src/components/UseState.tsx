@@ -1,10 +1,10 @@
 
 
-function UseState() {
+function UseState({name}: {name: string}) {
 
     return (
         <div>
-            <h2>Eliminar {}</h2>
+            <h2>Eliminar {name}</h2>
 
             <p>Por favor, escribe el codigo de seguridad.</p>
             

@@ -20,8 +20,8 @@ function UseState({name}: {name: string}) {
     }, [loading])
 
     return (
-        <div>
-            <h2>Eliminar {name}</h2>
+        <div className="text-lg font-normal text-stone-800">
+            <h2 className="text-yellow-600">Eliminar {name}</h2>
 
             <p>Por favor, escribe el codigo de seguridad.</p>
 

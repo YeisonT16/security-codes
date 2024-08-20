@@ -34,7 +34,7 @@ function UseState({name}: {name: string}) {
                 )
             }
             <input placeholder="Codigo de seguridad" />
-            <button
+            <button className="rounded-lg w-fit bg-lime-400 p-2 border text-lg font-semibold"
                 onClick={() => setLoading(true)}
             >Comprobar</button>
         </div>

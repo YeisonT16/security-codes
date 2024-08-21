@@ -1,8 +1,11 @@
 import { useState,useEffect } from "react"
 
+const SECURITY_CODE = 'paradigma'
+
 
 function UseState({name}: {name: string}) {
     const [error, setError] = useState(false)
+    const [value, setValue] = useState('')
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
@@ -12,7 +15,13 @@ function UseState({name}: {name: string}) {
             setTimeout(() => {
                 console.log("haciendo la validación")
 
-                setLoading(false)
+                if(value !== SECURITY_CODE) {
+                    setError(true)
+                }
+
+                
+                    setLoading(false)
+                
 
                 console.log("Terminando la validación")
             }, 3000)
@@ -33,7 +42,11 @@ function UseState({name}: {name: string}) {
                     <p>Cargando...</p>
                 )
             }
-            <input placeholder="Codigo de seguridad" />
+            <input 
+                placeholder="Codigo de seguridad" 
+                value={value}
+                onChange={(event) => {event.target.value}}
+            />
             <button className="rounded-lg w-fit bg-lime-400 p-2 border text-lg font-semibold"
                 onClick={() => setLoading(true)}
             >Comprobar</button>

@@ -1,6 +1,6 @@
 import './App.css'
 import { UseState } from './components/UseState'
-import { ClassState } from './components/ClassState'
+//import { ClassState } from './components/ClassState'
 
 function App() {
   
@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <UseState name='UseState'/>
-      <ClassState name="ClassState"/>
+      {/* <ClassState name="ClassState"/> */}
     </div>
   )
 }

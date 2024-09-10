@@ -34,7 +34,7 @@ function UseState({name}: {name: string}) {
 
             <p>Por favor, escribe el codigo de seguridad.</p>
 
-            {error && (
+            {(error && !loading) && (
                 <p>Error: el codigo es incorrecto</p>
             )}
             {
@@ -45,10 +45,13 @@ function UseState({name}: {name: string}) {
             <input 
                 placeholder="Codigo de seguridad" 
                 value={value}
-                onChange={(event) => {event.target.value}}
+                onChange={(event) => {
+                    //setError(false); 
+                    setValue(event.target.value)
+                }}
             />
             <button className="rounded-lg w-fit bg-lime-400 p-2 border text-lg font-semibold"
-                onClick={() => setLoading(true)}
+                onClick={() => {setError(false); setLoading(true);}}
             >Comprobar</button>
         </div>
 
